@@ -1,0 +1,11 @@
+workflows:
+  ios-workflow:
+    name: iOS Build
+    environment:
+      vars:
+        NODE_ENV: production
+    scripts:
+      - npm install
+      - npx react-native run-ios --configuration Release
+    artifacts:
+      - ios/build/Build/Products/Release-iphonesimulator/*.app
